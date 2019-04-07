@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json.schemastore.org/proxies",
+  "proxies": {
+    "MoroProxy": {
+      "matchCondition": {
+        "methods": ["GET"],
+        "route": "/api/remotemoro"
+      },
+      "backendUri": "https://%HELLO_HOST%/api/moro"
+    },
+    "GetUserByName": {
+      "matchCondition": {
+        "methods": ["GET"],
+        "route": "/api/users/{username}"
+      },
+      "responseOverrides": {
+        "response.statusCode": "200",
+        "response.headers.Content-Type": "application/json",
+        "response.body": {
+          "name": "{username}",
+          "description": "Awesome developer and master of serverless APIs",
+          "skills": ["Serverless", "APIs", "Azure", "Cloud"]
+        }
+      }
+    }
+  }
+}
