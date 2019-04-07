@@ -1,2 +1,2 @@
-# AzureFunctionTest
-Testing Azure Functions and Pipelines
+# AzureServerlessTest
+Testing Azure serverless stuff
