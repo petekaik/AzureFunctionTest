@@ -14,6 +14,6 @@ module.exports = async function(context, req) {
   //   }
 
   context.res = {
-    body: `Local date and time is ${new Date()}`
+    body: `${new Date()}` // format as string just to print prettier in browser
   };
 };
